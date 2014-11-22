@@ -1,3 +1,10 @@
+require "redmine"
+require "rubygems"
+
+Project.send(:include, ProjectAuthorPlugin::ProjectPatch)
+User.send(:include, ProjectAuthorPlugin::UserPatch)
+
+
 Redmine::Plugin.register :project_author_plugin do
   name 'Project Author Plugin'
   author 'Jan Hovancik'
